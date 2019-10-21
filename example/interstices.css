@@ -3,8 +3,15 @@ https://www.artsy.net/artwork/vera-molnar-interstices-1
 https://dam-gallery.de/wp/wp-content/uploads/2019/09/Vera-Molnar-Interstices-26-x-22-cm-1986.jpg
  */
 
+
+:host {
+  background-image: url(interstices.png);
+  background-position: center;
+}
+
 @supports (background: paint(_)) {
   :host {
+    background: white;
     border: 1rem solid white;
     box-sizing: border-box;
     display: grid;

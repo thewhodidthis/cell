@@ -3,6 +3,11 @@ http://dada.compart-bremen.de/item/artwork/127
 http://dada.compart-bremen.de/imageUploads/medium/04Emotion86.jpg
  */
 
+:host {
+  background-image: url(dialog-between-emotion-and-method.png);
+  background-position: center;
+}
+
 @supports (background: paint(_)) {
   :host {
     --the-black: rgba(66, 66, 66, 0.9);
@@ -14,7 +19,7 @@ http://dada.compart-bremen.de/imageUploads/medium/04Emotion86.jpg
     --the-cyan: rgba(3, 155, 229, 0.7);
     --the-white: rgba(158, 158, 158, 0.7);
 
-    background-color: black;
+    background: black;
     border: 1.5rem solid black;
     box-sizing: border-box;
     grid-template-columns: repeat(6, 1fr);

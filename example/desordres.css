@@ -3,9 +3,14 @@ http://dam.org/artists/phase-one/vera-molnar/artworks-bodies-of-work/-des-ordres
 http://www.dam.org/mix/molnar-desordres-3--dam-12365-IY8v6-de-2.jpg
  */
 
+:host {
+  background-image: url(desordres.png);
+  background-position: center;
+}
+
 @supports (background: paint(_)) {
   :host {
-    background-color: #efefef;
+    background: #efefef;
     border: 0.20625rem solid #efefef;
     box-sizing: border-box;
     display: grid;
