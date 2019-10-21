@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>&middot; cell &middot;</title>
+    <link rel="icon" href="https://example.thewhodidthis.com/favicon.ico">
+    <link rel="preload" href="index.js" as="script">
+    <link rel="preload" href="index.css" as="style">
+    <link rel="stylesheet" href="index.css">
+    <style>
+      figcaption em,
+      figcaption em a {
+        display: none;
+      }
+
+      figure div {
+        display: none;
+        height: 360px;
+        width: 540px;
+      }
+
+      figure div:target {
+        display: grid;
+      }
+
+      figure div:target ~ figcaption em {
+        display: inline;
+      }
+
+      figure div:target:nth-child(1) ~ figcaption em a:nth-child(1),
+      figure div:target:nth-child(2) ~ figcaption em a:nth-child(2),
+      figure div:target:nth-child(3) ~ figcaption em a:nth-child(3),
+      figure div:target:nth-child(4) ~ figcaption em a:nth-child(4) {
+        display: inherit;
+      }
+    </style>
+  </head>
+
+  <body>
+    <figure>
+      <div id="figure-1" size="48" is="simple-grid" title="Interstices"></div>
+      <div id="figure-2" size="54" is="simple-grid" title="(Dés)Ordres"></div>
+      <div id="figure-3" size="24" is="simple-grid" title="Dialog between emotion and method"></div>
+
+      <figcaption>
+        <p><strong><a href="https://github.com/thewhodidthis/cell" title="Fork me on github">cell.js</a></strong> Grid friendly paint API based pattern maker<em> &middot; <a href="#figure-2" title="(Dés)Ordres">Next</a><a href="#figure-3" title="Dialog between emotion and method">Next</a><a href="#figure-1" title="Interstices">Next</a> &rsaquo;</em></p>
+      </figcaption>
+    </figure>
+
+    <noscript><small><em>please enable javascript</em></small></noscript>
+    <script src="index.js"></script>
+    <script>
+      if ('paintWorklet' in CSS) {
+        CSS.paintWorklet.addModule('cell.js').catch(console.log)
+      }
+    </script>
+  </body>
+</html>

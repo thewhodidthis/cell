@@ -1,0 +1,48 @@
+{
+  "name": "@thewhodidthis/cell",
+  "version": "0.0.0",
+  "description": "Paint worklet for producing grid based patterns",
+  "main": "index",
+  "module": "index.mjs",
+  "homepage": "https://github.com/thewhodidthis/cell#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thewhodidthis/cell.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thewhodidthis/cell/issues"
+  },
+  "scripts": {
+    "test": "eslint index.mjs",
+    "prestart": "npm test",
+    "start": "rollup -c node:x -f cjs -o index.js index.mjs",
+    "preexample": "eslint example/index.js",
+    "example": "rollup -c node:x -f iife -n cell -o example/cell.js index.mjs"
+  },
+  "eslintConfig": {
+    "extends": "@thewhodidthis",
+    "globals": {
+      "registerPaint": true
+    }
+  },
+  "engines": {
+    "node": ">=6.11.0",
+    "npm": ">=3.10.10"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@thewhodidthis/arithmetics": "github:thewhodidthis/arithmetics",
+    "@thewhodidthis/eslint-config": "latest",
+    "eslint": "latest",
+    "poltocar": "github:thewhodidthis/poltocar",
+    "rollup": "latest",
+    "rollup-config-x": "latest"
+  },
+  "keywords": [
+    "houdini",
+    "css",
+    "grid"
+  ],
+  "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
+  "license": "Unlicense"
+}
