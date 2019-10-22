@@ -17,13 +17,16 @@ const INPUT_PROPERTIES = [
 ].map(p => `--cell-${p}`)
 
 const lookup = (map, options = {
-  // Defaults exposed
+  // Controls likelihood each vertex is randomly placed along circumcircle (0.0, 1.0)
   bend: 0,
+  // In degrees
   rotate: 0,
+  // Controls shape collapse / expand (-1.0, 1.0)
   spread: 0,
+  // In-geometry scaling (0.0, f)
   zoom: 1
 }) => {
-  // Attempt at parsing key from style property map
+  // For accessing style property map
   const get = k => map.has(k) && map.get(k).toString().trim()
 
   // Marks if circumcircle is internal or external to host element
@@ -32,28 +35,24 @@ const lookup = (map, options = {
   // Styles `undefined` by default
   options.styles = {}
 
-  // Controls likelihood each vertex is randomly placed along circumcircle (0, 1)
   const bend = get('--cell-bend')
 
   if (bend) {
     options.bend = parseFloat(bend)
   }
 
-  // In degrees
   const rotate = get('--cell-rotate')
 
   if (rotate) {
     options.rotate = parseFloat(rotate)
   }
 
-  // Controls shape collapse / expand
   const spread = get('--cell-spread')
 
   if (spread) {
     options.spread = spread
   }
 
-  // In-geometry scaling
   const zoom = get('--cell-zoom')
 
   if (zoom) {
@@ -86,7 +85,7 @@ export class QuadPainter {
     return INPUT_PROPERTIES
   }
 
-  // Conventiently automatically called after `window.onresize`
+  // Conventiently automatically called when geometry changes
   paint(context, geometry, properties) {
     const { bend, zoom, spread, rotate, styles, greedy } = lookup(properties)
     const { width: w, height: h } = geometry
