@@ -19,40 +19,40 @@ class Grid extends HTMLDivElement {
 
   connectedCallback() {
     if (this.isConnected) {
+      // Create a `size` attr total of empty `<div>` cells
       Array.from({ length: this.size })
         .map(() => document.createElement('div'))
-        .forEach((node) => {
-          this.shadowRoot.appendChild(node)
+        .forEach((x) => {
+          this.shadowRoot.appendChild(x)
         })
     }
   }
 }
 
+// Register custom elements, load cell.js worklet
 window.customElements.define('simple-grid', Grid, { extends: 'div' })
 window.customElements.whenDefined('simple-grid').then(() => {
-  const listMaybe = document.querySelectorAll('div')
-  const list = Array.from(listMaybe)
-    .filter(o => o.hasAttribute('title'))
-    .filter(o => o.hasAttribute('id'))
+  if ('paintWorklet' in CSS) {
+    CSS.paintWorklet.addModule('cell.js')
+      .then(() => {
+        // Extract css filename from title, attach inline import with each element's shadow DOM
+        const list = document.querySelectorAll('div')
 
-  const seed = Math.floor(Math.random() * list.length)
-  const mark = list[seed]
+        for (const host of list) {
+          const style = document.createElement('style')
+          const filename = host.getAttribute('title')
+            .trim()
+            .toLowerCase()
+            .split(' ')
+            .join('-')
+            .replace(/[()]/g, '')
+            .replace('é', 'e')
 
-  document.location.hash = mark.id
+          style.textContent = `@import '${filename}.css';`
 
-  for (const node of list) {
-    const link = document.createElement('link')
-    const path = node.getAttribute('title')
-      .trim()
-      .toLowerCase()
-      .split(' ')
-      .join('-')
-      .replace(/[()]/g, '')
-      .replace('é', 'e')
-
-    link.setAttribute('href', `${path}.css`)
-    link.setAttribute('rel', 'stylesheet')
-
-    node.shadowRoot.appendChild(link)
+          host.shadowRoot.appendChild(style)
+        }
+      })
+      .catch(console.log)
   }
 })

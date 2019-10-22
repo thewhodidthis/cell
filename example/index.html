@@ -8,51 +8,61 @@
     <link rel="preload" href="index.css" as="style">
     <link rel="stylesheet" href="index.css">
     <style>
-      figcaption em,
-      figcaption em a {
-        display: none;
+      @keyframes flip {
+        0% {
+          opacity: 1;
+        }
+
+        33.333%, 100% {
+          opacity: 0;
+        }
       }
 
-      figure div {
-        display: none;
-        height: 360px;
-        width: 540px;
-      }
-
-      figure div:target {
+      figure {
         display: grid;
       }
 
-      figure div:target ~ figcaption em {
-        display: inline;
+      div {
+        height: 360px;
+        /* Overlay sans taking out of context */
+        grid-column: 1;
+        grid-row: 1;
+        opacity: 0;
+        width: 540px;
       }
 
-      figure div:target:nth-child(1) ~ figcaption em a:nth-child(1),
-      figure div:target:nth-child(2) ~ figcaption em a:nth-child(2),
-      figure div:target:nth-child(3) ~ figcaption em a:nth-child(3),
-      figure div:target:nth-child(4) ~ figcaption em a:nth-child(4) {
-        display: inherit;
+      div:nth-of-type(1) {
+        animation: flip 12s steps(1) 0s infinite;
+      }
+
+      div:nth-of-type(2) {
+        animation: flip 12s steps(1) 4s infinite;
+      }
+
+      div:nth-of-type(3) {
+        animation: flip 12s steps(1) 8s infinite;
       }
     </style>
   </head>
 
   <body>
     <figure>
-      <div id="figure-1" size="48" is="simple-grid" title="Interstices"></div>
-      <div id="figure-2" size="54" is="simple-grid" title="(Dés)Ordres"></div>
-      <div id="figure-3" size="24" is="simple-grid" title="Dialog between emotion and method"></div>
+      <div size="48" is="simple-grid" title="Interstices">
+        <img alt="interstices.png" src="interstices.png">
+      </div>
+      <div size="54" is="simple-grid" title="(Dés)Ordres">
+        <img alt="desordres.png" src="desordres.png">
+      </div>
+      <div size="24" is="simple-grid" title="Dialog between emotion and method">
+        <img alt="dialog-between-emotion-and-method.png" src="dialog-between-emotion-and-method.png">
+      </div>
 
       <figcaption>
-        <p><strong><a href="https://github.com/thewhodidthis/cell" title="Fork me on github">cell.js</a></strong> Grid friendly paint API based pattern maker<em> &middot; <a href="#figure-2" title="(Dés)Ordres">Next</a><a href="#figure-3" title="Dialog between emotion and method">Next</a><a href="#figure-1" title="Interstices">Next</a> &rsaquo;</em></p>
+        <p><strong><a href="https://github.com/thewhodidthis/cell" title="Fork me on github">cell.js</a></strong> Grid friendly paint API based pattern maker</p>
       </figcaption>
     </figure>
 
     <noscript><small><em>please enable javascript</em></small></noscript>
     <script src="index.js"></script>
-    <script>
-      if ('paintWorklet' in CSS) {
-        CSS.paintWorklet.addModule('cell.js').catch(console.log)
-      }
-    </script>
   </body>
 </html>
