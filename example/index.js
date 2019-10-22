@@ -30,29 +30,30 @@ class Grid extends HTMLDivElement {
 }
 
 // Register custom elements, load cell.js worklet
-window.customElements.define('simple-grid', Grid, { extends: 'div' })
-window.customElements.whenDefined('simple-grid').then(() => {
-  if ('paintWorklet' in CSS) {
-    CSS.paintWorklet.addModule('cell.js')
-      .then(() => {
-        // Extract css filename from title, attach inline import with each element's shadow DOM
-        const list = document.querySelectorAll('div')
+if ('paintWorklet' in CSS) {
+  customElements.define('simple-grid', Grid, { extends: 'div' })
+  customElements.whenDefined('simple-grid')
+    .then(() => {
+      CSS.paintWorklet.addModule('cell.js')
+        .then(() => {
+          // Extract css filename from title, attach inline import with each element's shadow DOM
+          const list = document.querySelectorAll('div')
 
-        for (const host of list) {
-          const style = document.createElement('style')
-          const filename = host.getAttribute('title')
-            .trim()
-            .toLowerCase()
-            .split(' ')
-            .join('-')
-            .replace(/[()]/g, '')
-            .replace('é', 'e')
+          for (const host of list) {
+            const style = document.createElement('style')
+            const filename = host.getAttribute('title')
+              .trim()
+              .toLowerCase()
+              .split(' ')
+              .join('-')
+              .replace(/[()]/g, '')
+              .replace('é', 'e')
 
-          style.textContent = `@import '${filename}.css';`
+            style.textContent = `@import '${filename}.css';`
 
-          host.shadowRoot.appendChild(style)
-        }
-      })
-      .catch(console.log)
-  }
-})
+            host.shadowRoot.appendChild(style)
+          }
+        })
+        .catch(console.log)
+    })
+}
