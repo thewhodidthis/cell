@@ -41,8 +41,7 @@ if ('paintWorklet' in CSS) {
 
           for (const host of list) {
             const style = document.createElement('style')
-            const filename = host.getAttribute('title')
-              .trim()
+            const filename = host.dataset.name.trim()
               .toLowerCase()
               .split(' ')
               .join('-')
