@@ -4,65 +4,18 @@
     <meta charset="utf-8">
     <title>&middot; cell &middot;</title>
     <link rel="icon" href="https://example.thewhodidthis.com/favicon.ico">
-    <link rel="preload" href="index.js" as="script">
     <link rel="preload" href="index.css" as="style">
     <link rel="stylesheet" href="index.css">
-    <style>
-      @keyframes flip {
-        0% {
-          opacity: 1;
-        }
-
-        33.333%, 100% {
-          opacity: 0;
-        }
-      }
-
-      figure {
-        display: grid;
-      }
-
-      div {
-        height: 360px;
-        /* Overlay, avoid absolute positioning */
-        grid-column: 1;
-        grid-row: 1;
-        opacity: 0;
-        width: 540px;
-      }
-
-      div:nth-of-type(1) {
-        animation: flip 12s steps(1) 0s infinite;
-      }
-
-      div:nth-of-type(2) {
-        animation: flip 12s steps(1) 4s infinite;
-      }
-
-      div:nth-of-type(3) {
-        animation: flip 12s steps(1) 8s infinite;
-      }
-    </style>
+    <script src="index.js" defer></script>
   </head>
-
   <body>
     <figure>
       <div size="48" is="simple-grid" data-name="Interstices">
         <img alt="interstices.png" src="interstices.png">
       </div>
-      <div size="54" is="simple-grid" data-name="(Dés)Ordres">
-        <img alt="desordres.png" src="desordres.png">
-      </div>
-      <div size="24" is="simple-grid" data-name="Dialog between emotion and method">
-        <img alt="dialog-between-emotion-and-method.png" src="dialog-between-emotion-and-method.png">
-      </div>
-
       <figcaption>
         <p><strong><a href="https://github.com/thewhodidthis/cell" title="Fork me on github">cell.js</a></strong> Grid friendly paint API based pattern maker</p>
       </figcaption>
     </figure>
-
-    <noscript><small><em>please enable javascript</em></small></noscript>
-    <script src="index.js"></script>
   </body>
 </html>
