@@ -5,6 +5,3 @@
 # Fetch latest from github
 npm i thewhodidthis/cell
 ```
-
-### References
-- [css-houdini.rocks/posts/highlighter-marker-annotations](https://css-houdini.rocks/posts/highlighter-marker-annotations)
