@@ -5,22 +5,10 @@ class Grid extends HTMLDivElement {
     this.attachShadow({ mode: 'open' })
   }
 
-  get size() {
-    const v = this.hasAttribute('size') ? this.getAttribute('size') : 24
-
-    return parseInt(v, 10)
-  }
-
-  set size(v) {
-    if (v) {
-      this.setAttribute('size', v)
-    }
-  }
-
   connectedCallback() {
     if (this.isConnected) {
-      // Create a `size` attr total of empty `<div>` cells
-      Array.from({ length: this.size })
+      // Create a `data-size` total of empty `<div>` cells
+      Array.from({ length: this.dataset.size })
         .map(() => document.createElement('div'))
         .forEach((x) => {
           this.shadowRoot.appendChild(x)
