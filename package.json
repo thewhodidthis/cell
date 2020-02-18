@@ -29,14 +29,13 @@
     "node": ">=6.11.0",
     "npm": ">=3.10.10"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@thewhodidthis/arithmetics": "github:thewhodidthis/arithmetics",
-    "@thewhodidthis/eslint-config": "latest",
-    "eslint": "latest",
-    "poltocar": "github:thewhodidthis/poltocar",
-    "rollup": "latest",
-    "rollup-config-x": "latest"
+    "@thewhodidthis/arithmetics": "^0.0.3",
+    "@thewhodidthis/eslint-config": "^0.0.11",
+    "eslint": "^6.8.0",
+    "poltocar": "^2.0.5",
+    "rollup": "^1.31.1",
+    "rollup-config-x": "^1.0.2"
   },
   "keywords": [
     "houdini",
