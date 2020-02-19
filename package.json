@@ -2,22 +2,29 @@
   "name": "@thewhodidthis/cell",
   "version": "0.0.0",
   "description": "Paint worklet for producing grid based patterns",
-  "main": "index",
-  "module": "index.mjs",
+  "keywords": [
+    "houdini",
+    "css",
+    "grid"
+  ],
   "homepage": "https://github.com/thewhodidthis/cell#readme",
+  "bugs": {
+    "url": "https://github.com/thewhodidthis/cell/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thewhodidthis/cell.git"
   },
-  "bugs": {
-    "url": "https://github.com/thewhodidthis/cell/issues"
-  },
+  "license": "Unlicense",
+  "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
+  "main": "index",
+  "module": "index.mjs",
   "scripts": {
-    "test": "eslint index.mjs",
+    "preexample": "eslint example/index.js",
+    "example": "rollup -c node:x -f iife -n cell -o example/cell.js index.mjs",
     "prestart": "npm test",
     "start": "rollup -c node:x -f cjs -o index.js index.mjs",
-    "preexample": "eslint example/index.js",
-    "example": "rollup -c node:x -f iife -n cell -o example/cell.js index.mjs"
+    "test": "eslint index.mjs"
   },
   "eslintConfig": {
     "extends": "@thewhodidthis",
@@ -25,23 +32,16 @@
       "registerPaint": true
     }
   },
-  "engines": {
-    "node": ">=6.11.0",
-    "npm": ">=3.10.10"
-  },
   "devDependencies": {
-    "@thewhodidthis/arithmetics": "^0.0.3",
-    "@thewhodidthis/eslint-config": "^0.0.11",
+    "@thewhodidthis/arithmetics": "^0.0.5",
+    "@thewhodidthis/eslint-config": "^0.0.16",
     "eslint": "^6.8.0",
     "poltocar": "^2.0.5",
     "rollup": "^1.31.1",
-    "rollup-config-x": "^1.0.2"
+    "rollup-config-x": "^1.0.4"
   },
-  "keywords": [
-    "houdini",
-    "css",
-    "grid"
-  ],
-  "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
-  "license": "Unlicense"
+  "engines": {
+    "node": ">=6.11.0",
+    "npm": ">=3.10.10"
+  }
 }
