@@ -1,6 +1,7 @@
 {
   "name": "@thewhodidthis/cell",
   "version": "0.0.0",
+  "private": true,
   "description": "Paint worklet for producing grid based patterns",
   "keywords": [
     "houdini",
