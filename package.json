@@ -16,10 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/thewhodidthis/cell.git"
   },
-  "license": "Unlicense",
-  "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
+  "license": "ISC",
+  "author": "Sotiri Bakagiannis <sotirios.bakagiannis@gmail.com> (http://thewhodidthis.com)",
   "main": "index",
   "module": "index.mjs",
+  "directories": {
+    "example": "example"
+  },
   "scripts": {
     "preexample": "eslint example/index.js",
     "example": "rollup -c node:x -f iife -n cell -o example/cell.js index.mjs",
@@ -33,6 +36,7 @@
       "registerPaint": true
     }
   },
+  "dependencies": {},
   "devDependencies": {
     "@thewhodidthis/arithmetics": "^0.0.5",
     "@thewhodidthis/eslint-config": "^0.0.17",
