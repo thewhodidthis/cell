@@ -4,11 +4,11 @@ Declaratively generate [Vera Molnár](http://www.veramolnar.com) inspired images
 
 ## setup
 
-Fetch latest from GitHub,
+Fetch latest from GitHub directly:
 
 ```sh
 # Includes ES and CJS versions
-npm i thewhodidthis/cell
+npm install thewhodidthis/cell
 ```
 
 ## usage
