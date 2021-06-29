@@ -4,10 +4,10 @@ Declaratively generate [Vera Molnár](http://www.veramolnar.com) inspired images
 
 ## setup
 
-Fetch latest from GitHub directly:
+Download from GitHub directly:
 
 ```sh
-# Includes ES and CJS versions
+# Add to package.json
 npm install thewhodidthis/cell
 ```
 
@@ -17,8 +17,8 @@ Load JS first,
 
 ```js
 // Load worklet
-if ('paintWorklet' in CSS) {
-  CSS.paintWorklet.addModule('cell.js').catch(console.log)
+if ("paintWorklet" in CSS) {
+  CSS.paintWorklet.addModule("cell.js").catch(console.log)
 }
 ```
 
