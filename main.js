@@ -1,19 +1,19 @@
-import { cast, TAU, deg, rad, rand } from '@thewhodidthis/arithmetics'
-import poltocar from 'poltocar'
+import { cast, deg, rad, rand, TAU } from "@thewhodidthis/arithmetics"
+import poltocar from "poltocar"
 
 // Ninety, must've really thought about this!
 const Q = deg(TAU * 0.25)
 
 // Stuck with CSS custom properties for now
 const INPUT_PROPERTIES = [
-  'bend',
-  'fill-style',
-  'greedy',
-  'line-width',
-  'rotate',
-  'zoom',
-  'spread',
-  'stroke-style'
+  "bend",
+  "fill-style",
+  "greedy",
+  "line-width",
+  "rotate",
+  "zoom",
+  "spread",
+  "stroke-style",
 ].map(p => `--cell-${p}`)
 
 const lookup = (map, options = {
@@ -24,54 +24,54 @@ const lookup = (map, options = {
   // Controls shape collapse / expand (-1.0, 1.0)
   spread: 0,
   // In-geometry scaling (0.0, f)
-  zoom: 1
+  zoom: 1,
 }) => {
   // For accessing style property map
   const get = k => map.has(k) && map.get(k).toString().trim()
 
   // Marks if circumcircle is internal or external to host element
-  options.greedy = !!get('--cell-greedy')
+  options.greedy = !!get("--cell-greedy")
 
   // Styles `undefined` by default
   options.styles = {}
 
-  const bend = get('--cell-bend')
+  const bend = get("--cell-bend")
 
   if (bend) {
     options.bend = parseFloat(bend)
   }
 
-  const rotate = get('--cell-rotate')
+  const rotate = get("--cell-rotate")
 
   if (rotate) {
     options.rotate = parseFloat(rotate)
   }
 
-  const spread = get('--cell-spread')
+  const spread = get("--cell-spread")
 
   if (spread) {
     options.spread = spread
   }
 
-  const zoom = get('--cell-zoom')
+  const zoom = get("--cell-zoom")
 
   if (zoom) {
     options.zoom = parseFloat(zoom)
   }
 
-  const fillStyle = get('--cell-fill-style')
+  const fillStyle = get("--cell-fill-style")
 
   if (fillStyle) {
     options.styles.fillStyle = fillStyle
   }
 
-  const strokeStyle = get('--cell-stroke-style')
+  const strokeStyle = get("--cell-stroke-style")
 
   if (strokeStyle) {
     options.styles.strokeStyle = strokeStyle
   }
 
-  const lineWidth = get('--cell-line-width')
+  const lineWidth = get("--cell-line-width")
 
   if (lineWidth) {
     options.styles.lineWidth = parseFloat(lineWidth)
@@ -173,5 +173,5 @@ export class ArcPainter {
   }
 }
 
-registerPaint('quad', QuadPainter)
-registerPaint('arc', ArcPainter)
+registerPaint("quad", QuadPainter)
+registerPaint("arc", ArcPainter)
