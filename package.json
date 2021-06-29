@@ -18,35 +18,22 @@
   },
   "license": "ISC",
   "author": "Sotiri Bakagiannis <sotirios.bakagiannis@gmail.com> (http://thewhodidthis.com)",
-  "main": "index",
-  "module": "index.mjs",
+  "type": "module",
+  "exports": "./main.js",
+  "main": "./main.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
-    "preexample": "eslint example/index.js",
-    "example": "rollup -c node:x -f iife -n cell -o example/cell.js index.mjs",
-    "prestart": "npm test",
-    "start": "rollup -c node:x -f cjs -o index.js index.mjs",
-    "test": "eslint index.mjs"
+    "start": "esbuild --bundle --global-name=cell --outfile=example/cell.js main.js"
   },
-  "eslintConfig": {
-    "extends": "@thewhodidthis",
-    "globals": {
-      "registerPaint": true
-    }
-  },
-  "dependencies": {},
   "devDependencies": {
-    "@thewhodidthis/arithmetics": "^0.0.5",
-    "@thewhodidthis/eslint-config": "^0.0.17",
-    "eslint": "^6.8.0",
-    "poltocar": "^2.0.5",
-    "rollup": "^1.31.1",
-    "rollup-config-x": "^1.0.4"
+    "@thewhodidthis/arithmetics": "^1.0.0",
+    "esbuild": "^0.12.12",
+    "poltocar": "^3.0.1"
   },
   "engines": {
-    "node": ">=6.11.0",
-    "npm": ">=3.10.10"
+    "node": ">=14.17.0",
+    "npm": ">=6.14.13"
   }
 }
