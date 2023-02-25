@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Helps create generative art patterns using CSS.">
+    <title>cell.js</title>
+    <script src="example.js" defer></script>
+    <style>
+      html {
+        font: medium/normal sans-serif;
+        height: 100%;
+      }
+      body {
+        display: grid;
+        margin: 0;
+        min-height: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      p {
+        text-align: center;
+      }
+      figcaption {
+        font-size: small;
+      }
+      figure {
+        margin: auto;
+        max-width: 33.75rem;
+        width: 100%;
+      }
+      img {
+        vertical-align: middle;
+      }
+      div {
+        aspect-ratio: 540 / 360;
+      }
+    </style>
+  </head>
+  <body>
+    <figure>
+      <div is="simple-grid" data-size="24">
+        <img src="dialog-between-emotion-and-method.png" alt="Fallback: Recreation of Vera Molnár's 1986 Dialog Between Emotion and Method" height="360" width="540">
+      </div>
+      <figcaption>
+        <p><strong><a href="https://github.com/thewhodidthis/cell">cell.js</a></strong> Grid friendly paint API based pattern maker</p>
+      </figcaption>
+    </figure>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@thewhodidthis/arithmetics": "https://thewhodidthis.github.io/arithmetics/main.js",
+    "@thewhodidthis/geometrics": "https://thewhodidthis.github.io/geometrics/main.js"
+  }
+}

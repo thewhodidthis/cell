@@ -1,0 +1,144 @@
+/*
+http://dada.compart-bremen.de/item/artwork/127
+http://dada.compart-bremen.de/imageUploads/medium/04Emotion86.jpg
+ */
+@supports (background: paint(_)) {
+  :host {
+    --the-black: rgba(66, 66, 66, 0.9);
+    --the-red: rgba(216, 27, 96, 0.7);
+    --the-green: rgba(67, 160, 71, 0.7);
+    --the-yellow: rgba(251, 192, 45, 0.7);
+    --the-blue: rgba(57, 73, 171, 0.7);
+    --the-magenta: rgba(142, 36, 170, 0.7);
+    --the-cyan: rgba(3, 155, 229, 0.7);
+    --the-white: rgba(158, 158, 158, 0.7);
+
+    background: black;
+    border: 1.5rem solid transparent;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  div {
+    --cell-spread: 0;
+    --cell-bend: 1;
+    --cell-line-width: 1.5;
+    --cell-stroke-style: var(--the-black);
+    --cell-fill-style: transparent;
+
+    background-image: paint(quad), paint(quad), paint(quad), paint(quad), paint(quad), paint(quad), paint(quad), paint(quad);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%, 70%, 50%, 85%, 60%, 100%, 90%, 40%;
+    margin: -0.5rem;
+  }
+
+  div:nth-child(1) {
+    --cell-stroke-style: var(--the-red);
+  }
+
+  div:nth-child(2) {
+    --cell-stroke-style: var(--the-magenta);
+  }
+
+  div:nth-child(3) {
+    --cell-stroke-style: var(--the-cyan);
+  }
+
+  div:nth-child(4) {
+    --cell-stroke-style: var(--the-white);
+  }
+
+  div:nth-child(5) {
+    --cell-stroke-style: var(--the-yellow);
+  }
+
+  div:nth-child(6) {
+    --cell-stroke-style: var(--the-cyan);
+  }
+
+  div:nth-child(7) {
+    --cell-stroke-style: var(--the-green);
+  }
+
+  div:nth-child(8) {
+    --cell-stroke-style: var(--the-blue);
+  }
+
+  div:nth-child(9) {
+    --cell-stroke-style: var(--the-white);
+  }
+
+  div:nth-child(10) {
+    --cell-stroke-style: var(--the-yellow);
+  }
+
+  div:nth-child(11) {
+    --cell-stroke-style: var(--the-red);
+  }
+
+  div:nth-child(12) {
+    --cell-stroke-style: var(--the-magenta);
+  }
+
+  div:nth-child(13) {
+    --cell-stroke-style: var(--the-magenta);
+  }
+
+  div:nth-child(14) {
+    --cell-stroke-style: var(--the-red);
+  }
+
+  div:nth-child(15) {
+    --cell-stroke-style: var(--the-yellow);
+  }
+
+  div:nth-child(16) {
+    --cell-stroke-style: var(--the-magenta);
+  }
+
+  div:nth-child(17) {
+    --cell-stroke-style: var(--the-blue);
+  }
+
+  div:nth-child(18) {
+    --cell-stroke-style: var(--the-blue);
+  }
+
+  div:nth-child(19) {
+    --cell-stroke-style: var(--the-cyan);
+  }
+
+  div:nth-child(20) {
+    --cell-stroke-style: var(--the-blue);
+  }
+
+  div:nth-child(21) {
+    --cell-stroke-style: var(--the-red);
+  }
+
+  div:nth-child(22) {
+    --cell-stroke-style: var(--the-white);
+  }
+
+  div:nth-child(23) {
+    --cell-stroke-style: var(--the-red);
+  }
+
+  div:nth-child(24) {
+    --cell-stroke-style: var(--the-green);
+  }
+
+  div:nth-child(2n + 1) {
+    --cell-rotate: 20;
+  }
+
+  div:nth-child(3n + 2) {
+    --cell-rotate: 30;
+  }
+
+  div:nth-child(5n + 3) {
+    --cell-rotate: 50;
+  }
+}
