@@ -18,7 +18,9 @@ Load JS first:
 ```js
 // Load worklet
 if ("paintWorklet" in CSS) {
-  CSS.paintWorklet.addModule("https://thewhodidthis.github.io/cell/cell.js").catch(console.log)
+  CSS.paintWorklet
+    .addModule("https://thewhodidthis.github.io/cell/cell.js")
+    .catch(console.log)
 }
 ```
 
@@ -36,7 +38,13 @@ Then in CSS:
   div {
     --cell-fill-style: transparent;
 
-    background-image: paint(quad), paint(quad), paint(quad), paint(quad), paint(quad), paint(quad);
+    background-image:
+      paint(quad),
+      paint(quad),
+      paint(quad),
+      paint(quad),
+      paint(quad),
+      paint(quad);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%, 88%, 76%, 64%, 52%, 40%;
