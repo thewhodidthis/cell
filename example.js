@@ -16,23 +16,24 @@ class Grid extends HTMLDivElement {
   }
 }
 
-// Register custom elements, load worklet.
+// Register custom element, load worklet.
 if ("paintWorklet" in CSS) {
   customElements.define("simple-grid", Grid, { extends: "div" })
-  customElements.whenDefined("simple-grid")
-    .then(() => {
-      CSS.paintWorklet.addModule("cell.js")
-        .then(() => {
-          const style = document.createRange().createContextualFragment(`
+}
+
+customElements.whenDefined("simple-grid")
+  .then(() => {
+    CSS.paintWorklet.addModule("cell.js")
+      .then(() => {
+        const style = document.createRange().createContextualFragment(`
             <style>
               @import "dialog-between-emotion-and-method.css"
             </style>
           `)
 
-          document.querySelector("div")
-            .shadowRoot
-            .append(style)
-        })
-        .catch(console.log)
-    })
-}
+        document.querySelector("div")
+          .shadowRoot
+          .append(style)
+      })
+      .catch(console.log)
+  })
