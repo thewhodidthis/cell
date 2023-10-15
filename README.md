@@ -65,4 +65,4 @@ Then in CSS:
 ## see also
 
 - [Pattern making with CSS Paint](https://thewhodidthis.com/pattern-making-with-css-paint/)
-- [Quick sketches &rarr;](https://sketches.thewhodidthis.com/pattern-making/)
+- [Quick sketches &rarr;](https://thewhodidthis.com/sketches/pattern-making/)
